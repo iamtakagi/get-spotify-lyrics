@@ -1,0 +1,34 @@
+{
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "format": "pnpm run lint:prettier --write",
+    "lint:eslint": "eslint . --ext \".js,.jsx,.ts,.tsx\"",
+    "lint:prettier": "prettier --check \"**/*.{js,ts,tsx,css,json,yaml,md}\"",
+    "lintfix": "run-s 'lintfix:*' 'format'",
+    "lintfix:eslint": "pnpm run lint:eslint --fix",
+    "build": "tsc"
+  },
+  "author": "iamtakagi",
+  "license": "MIT",
+  "eslint": {
+    "extends": [
+      "@iamtakagi"
+    ],
+    "parserOptions": {
+      "project": [
+        "./tsconfig.json"
+      ]
+    }
+  },
+  "prettier": "@iamtakagi/prettier-config",
+  "devDependencies": {
+    "@iamtakagi/eslint-config": "^1.0.0",
+    "@iamtakagi/prettier-config": "^1.0.3"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "puppeteer": "^23.6.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
